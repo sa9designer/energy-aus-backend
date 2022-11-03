@@ -35,4 +35,8 @@ app.get("/api", (req, res) => {
     console.log("Error", error);
   }
 });
+
+app.all("*", (req, res) => {
+  res.send("Invalid route");
+});
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
